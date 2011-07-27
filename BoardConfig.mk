@@ -57,8 +57,9 @@ BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/apollo/recovery/recover
 BOARD_BOOT_DEVICE := /dev/block/bml5
 
 BOARD_DATA_DEVICE := /dev/block/stl7
-BOARD_DATA_FILESYSTEM := ext2
+BOARD_DATA_FILESYSTEM := ext4
 #BOARD_DATA_FILESYSTEM_OPTIONS := llw,check=no,nosuid,nodev
+BOARD_DATA_FILESYSTEM_OPTIONS := noatime,nodiratime,nobh,noauto_da_alloc,data=writeback,barrier=0,commit=20,nosuid,nodev
 #BOARD_HAS_DATADATA := true
 #BOARD_DATADATA_DEVICE := /dev/block/stl10
 #BOARD_DATADATA_FILESYSTEM := auto
@@ -66,9 +67,11 @@ BOARD_DATA_FILESYSTEM := ext2
 BOARD_SYSTEM_DEVICE := /dev/block/stl6
 BOARD_SYSTEM_FILESYSTEM := ext2
 #BOARD_SYSTEM_FILESYSTEM_OPTIONS := llw,check=no
+BOARD_SYSTEM_FILESYSTEM_OPTIONS := nodev,nodiratime,relatime,errors=continue
 BOARD_CACHE_DEVICE := /dev/block/stl8
 BOARD_CACHE_FILESYSTEM := ext2
 #BOARD_CACHE_FILESYSTEM_OPTIONS := llw,check=no,nosuid,nodev
+BOARD_CACHE_FILESYSTEM_OPTIONS := nosuid,nodev,nodiratime,relatime,errors=continue
 #BOARD_SDEXT_DEVICE := /dev/block/mmcblk0p2
 BOARD_SDCARD_DEVICE_SECONDARY := NULL
 
@@ -76,7 +79,7 @@ BOARD_HAS_NO_MISC_PARTITION := true
 
 BOARD_RECOVERY_DEVICE := /dev/block/bml9
 
-#BOARD_HAS_NO_RECOVERY_PARTITION := true
+BOARD_HAS_NO_RECOVERY_PARTITION := true
 
 BOARD_LDPI_RECOVERY := true
 

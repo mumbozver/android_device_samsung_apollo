@@ -22,7 +22,7 @@
 
 char* MENU_HEADERS[] = { NULL };
 
-char* MENU_ITEMS[] = { "reboot system 27 now",
+char* MENU_ITEMS[] = { "reboot system 30 now",
                        "apply sdcard:update.zip",
                        "wipe data/factory reset",
                        "wipe cache partition",
